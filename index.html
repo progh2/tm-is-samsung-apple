@@ -73,6 +73,7 @@
                 <a href="#" onclick="init()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">시작하기</a>
                 <div id="webcam-container"></div>
                 <div id="label-container"></div>
+
               </p>
           </div>
         </div>
@@ -137,8 +138,9 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
+            
             const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2) + '<input class="mdl-slider mdl-js-slider" type="range" min="0" max="1" value="'+prediction[i].probability.toFixed(2)+'" tabindex="0"><br>';
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }

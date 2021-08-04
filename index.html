@@ -144,8 +144,8 @@
             + (prediction[i].probability.toFixed(2) * 100)
             + '%</span><span class="mdl-chip__text">'
             + prediction[i].className + '</span></span>' 
-            + ' <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'
-            + (prediction[i].probability.toFixed(2) * 100)+'" width="50%" ><br>';
+            + ' <p style="width:500px"><input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'
+            + (prediction[i].probability.toFixed(2) * 100)+'" width="50%" ></p><br>';
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }

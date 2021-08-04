@@ -140,7 +140,10 @@
         for (let i = 0; i < maxPredictions; i++) {
             
             const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2) + '<input class="mdl-slider mdl-js-slider" type="range" min="0" max="1" value="'+prediction[i].probability.toFixed(2)+'" tabindex="0"><br>';
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2) 
+            + '<span class="mdl-chip mdl-chip--contact"><span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">'+(prediction[i].probability.toFixed(2) * 100)+'
+  %</span><span class="mdl-chip__text">'+prediction[i].className+'</span></span>' 
+            + ' <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'+(prediction[i].probability.toFixed(2) * 100)+'" tabindex="0"><br>';
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }

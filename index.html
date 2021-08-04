@@ -140,12 +140,12 @@
         for (let i = 0; i < maxPredictions; i++) {
             
             //const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2) 
-            const classPrediction = '<span class="mdl-chip mdl-chip--contact"><span class="mdl-chip__text">'
-            + prediction[i].className + '</span><span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">' 
+            const classPrediction = '<span class="mdl-chip mdl-chip--contact"><span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">' 
             + (prediction[i].probability.toFixed(2) * 100)
-            + '%</span></span>' 
+            + '%</span><span class="mdl-chip__text">'
+            + prediction[i].className + '</span></span>' 
             + ' <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'
-            + (prediction[i].probability.toFixed(2) * 100)+'" tabindex="0"><br>';
+            + (prediction[i].probability.toFixed(2) * 100)+'" width="50%" ><br>';
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
